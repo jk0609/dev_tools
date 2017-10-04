@@ -4,5 +4,5 @@
 
 ## Setup
 npm install
-# serve at localhost:8080
 npm start
+Open localhost:8000 in browser
