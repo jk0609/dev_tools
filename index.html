@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Browser Dev Tools</h1>
+				</section>
+				<section>
+					<section>
+						<h1>Accessing Dev Tools</h1>
+					</section>
+					<section>
+						<h5>When in doubt:</h5>
+						<p style='text-align: left;'>Press Command+Option+I (Mac) or Control+Shift+I (Windows, Linux)</p>
+						<p>OR</p>
+						<p style='text-align: left;'>Right click on the page and select Inspect/Inspect Element</p>
+					</section>
+					<section>
+						<h5>Menus:</h5>
+						<table style="width:100%">
+						  <tr>
+						    <th>Chrome</th>
+						    <th>Firefox</th>
+						    <th>Edge</th>
+						  </tr>
+						  <tr>
+						    <td><img height='300' src="https://jk0609.github.io/dev_tools/img/ChromeDevMenu.png" alt=""></td>
+						    <td><img height='300' src="https://jk0609.github.io/dev_tools/img/FirefoxDevMenu.png" alt=""></td>
+						    <td><img height='300' src="https://jk0609.github.io/dev_tools/img/EdgeDevMenu.png" alt=""></td>
+						  </tr>
+						</table>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Network Inspection</h1>
+					</section>
+					<section>
+						<h5>What does it do?</h5>
+						<ul style='font-size: 30px;'>
+							<li>Shows time taken, origin and other information on any network request from page.</li>
+							<img src="https://jk0609.github.io/img/NetworkBottom.png" alt="">
+							<!-- Talk about cache, cookie clearing, and throttling -->
+							<li>Can simulate user experience for first visits or visits on mobile.</li>
+							<!-- Long request time vs long download time -->
+							<li>Examine detailed header, response and load time information.</li>
+						</ul>
+					</section>
+					<section>
+						<h5>Chrome</h5>
+						<!-- network tab, explain waterfall visual, screenshot, log preservation, throttling -->
+						<img src="https://jk0609.github.io/img/ChromeNetwork.png" alt="">
+						<ul style='font-size: 24px; margin-right: 50%; width: 100%;'>
+							<li>Visual waterfall, hover for ms breakdown. Adjustable timeline.</li>
+							<li>Running screenshot feature to visually track loaded elements.</li>
+							<li>Columns are customizable and requests can be filtered on columns.</li>
+							<!-- cURL request -->
+						</ul>
+					</section>
+					<section>
+						<h5>Firefox</h5>
+						<!-- Enabling persistent logs and cache are under general settings -->
+						<img src="https://jk0609.github.io/img/FirefoxNetwork.png" alt="">
+						<ul style='font-size: 24px; margin-right: 50%; width: 100%;'>
+							<li>Waterfall shown in ms, but uses color-coded icon sets.</li>
+							<li>Requests can be resent with editable headers.</li>
+							<li>Security tab, Stack Trace tab for requests made from JS scripts.</li>
+							<li>Performance Analysis Mode</li>
+						</ul>
+						<!-- throttling options are elsewheere -->
+					</section>
+					<section>
+						<h5>Firefox Performance Analysis Mode</h5>
+						<img src="https://jk0609.github.io/img/PerfAnalysisStart.png" alt="">
+						<img src="https://jk0609.github.io/img/PerfAnalysis.png" alt="">
+					</section>
+					<section>
+						<h5>Edge</h5>
+						<img src="https://jk0609.github.io/img/EdgeNetwork.png" alt="">
+						<ul style='font-size: 24px; margin-right: 50%; width: 100%;'>
+							<li>Visual waterfall but timeline bounds can't be changed.</li>
+							<li>Columns are not customizable.</li>
+							<li>No throttling option.</li>
+						</ul>
+					</section>
+					<section>
+						<h5>Network Details</h5>
+						<!-- Click on a request for detailed header and other info -->
+						<table style="width:100%">
+						  <tr>
+						    <th>Chrome</th>
+						    <th>Firefox</th>
+						    <th>Edge</th>
+						  </tr>
+						  <tr>
+						    <td><img  src="https://jk0609.github.io/img/ChromeNetworkPanel.png" alt=""></td>
+						    <td><img  src="https://jk0609.github.io/img/FirefoxNetworkPanel.png" alt=""></td>
+						    <td><img  src="https://jk0609.github.io/img/EdgeNetworkPanel.png" alt=""></td>
+						  </tr>
+						</table>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Emulation</h1>
+					</section>
+					<section>
+						<h5>What does it do?</h5>
+						<ul style='font-size: 30px;'>
+							<li>Simulate page display across different screen sizes and resolution to ensure mobile friendliness.</li>
+							<li>Can simulate different touch inputs, geolocation status and device orientation.</li>
+							<img src="https://jk0609.github.io/img/Sensors.png" alt="" height='250px'>
+							<li>Not comprehensive, testing on a physical device is preferable. Load times from mobile CPU/GPU are not emulated.</li>
+						</ul>
+					</section>
+					<section>
+						<h5>Chrome - Device Mode</h5>
+						<!-- Top bar of view, custom settings and free resizing available  -->
+						<img src="https://jk0609.github.io/img/ChromeEmu.png" alt="">
+						<ul style='font-size: 24px; margin-right: 50%; width: 100%;'>
+							<li>Large number of device presets.</li>
+							<li>Extensive display options. Can list media queries from CSS, can emulate Android keyboards, etc.</li>
+							<li>Geolocation and orientation options under Dev Tools > Menu > More Tools > Sensors</li>
+							<!-- Spoof geolocation settings, 3 axis orientation -->
+						</ul>
+					</section>
+					<section>
+						<h5>Firefox - Responsive Design Mode</h5>
+						<img src="https://jk0609.github.io/img/FirefoxEmu.png" alt="">
+						<ul style='font-size: 24px; margin-right: 50%; width: 100%;'>
+							<!-- DPR is ratio of physical screen resolution to logical digital resolution -->
+							<li>Device-pixel ratio (DPR) available on top bar.</li>
+							<li>Contains the network throttling option.</li>
+							<li>Minimal orientation options, no geolocation options.</li>
+						</ul>
+					</section>
+					<section>
+						<h5>Edge - Emulation</h5>
+						<img src="https://jk0609.github.io/img/EdgeEmu.png" alt="">
+						<ul style='font-size: 24px; margin-right: 50%; width: 100%;'>
+							<li>Device presets are iPhone 6 <. Older devices require knowledge of settings.</li>
+							<li>Minimal orientation options.</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Cookies</h1>
+					</section>
+					<section>
+						<h5>Where are they?</h5>
+						<table style="width:150%; margin-left:-25%;">
+							<tr>
+								<th>Chrome</th>
+								<th>Firefox</th>
+								<th>Edge</th>
+							</tr>
+							<tr>
+								<td><img  src="https://jk0609.github.io/img/ChromeCookiesWhere.png" alt=""></td>
+								<td><img  src="https://jk0609.github.io/img/FirefoxCookiesWhere.png" alt=""></td>
+								<td><img  src="https://jk0609.github.io/img/EdgeCookiesWhere.png" alt=""></td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<!-- Name, Value, Domain, Path, Expiration, Size, Secure. Firefox has Last Access -->
+						<!-- Sorted based on origin domain -->
+						<h5>What are they?</h5>
+						<div style="text-align: left; float: left; width: 50%;">
+							<img src="https://jk0609.github.io/img/FirefoxCookieDetail.png" alt="">
+						</div>
+
+						<div style="text-align: right; float: right; width: 50%;">
+							<ul style='font-size: 24px;'>
+								<li>Contains small amount of data specific to a website. Customizes browsing experience.</li>
+								<li>Firefox and Edge let you edit cookies directly. Chrome does not.</li>
+								<li>All can selectively delete or delete all cookies.</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
